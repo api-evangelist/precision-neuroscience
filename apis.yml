@@ -1,17 +1,41 @@
 aid: precision-neuroscience
 name: Precision Neuroscience
-description: 'Precision Neuroscience is a company surfaced via the API Evangelist harvest backlog (source:
-  secondary-market) and added to the network as a stub for full-pipeline profiling.'
+description: >-
+  Precision Neuroscience is a New York City brain-computer interface company founded in
+  2021 by Benjamin Rapoport, Michael Mager, Demetrios Papageorgiou and Mark Hettick, with
+  additional sites in Santa Clara, California and Addison, Texas. Its product is the
+  Layer 7 Cortical Interface, a thin-film microelectrode array that lies on the surface of
+  the cortex rather than penetrating brain tissue, and is designed to be removable and
+  upgradable. The array received FDA 510(k) clearance for recording, monitoring and
+  stimulating on the brain surface for implantation durations of up to 30 days, and the
+  company reports 95+ clinical study participants across 15+ hospital partnerships —
+  Mount Sinai, Penn Medicine, Johns Hopkins, Mass General Brigham, Northwestern, Emory,
+  Barrow Neurological Institute and others — plus a strategic partnership with Medtronic.
+  Precision sells a regulated medical device, not software services. It runs no developer
+  program: no public API, SDK, webhooks, developer portal or machine-readable
+  specification is published anywhere on its domain. Its only public engineering surface
+  is a verified GitHub organization whose single public repository is an Apache-2.0
+  research notebook accompanying a 2025 neural-decoding result.
+image: https://cdn.sanity.io/images/883wn8od/production/27b30ec3135c38d300a7ad288ad4d71b142bdcd1-1200x630.png?fm=webp&w=1200&q=75
 url: https://raw.githubusercontent.com/api-evangelist/precision-neuroscience/refs/heads/main/apis.yml
 x-type: company
 x-source: harvest:secondary-market
-x-tier: stub
-x-tier-reason: harvest
-specificationVersion: '0.20'
+x-tier: profiled
+x-tier-reason: enrichment-pipeline
+specificationVersion: '0.21'
 created: '2026-08-05'
 modified: '2026-08-05'
 tags:
 - Company
+- brain-computer-interface
+- neurotechnology
+- medical-devices
+- neuroscience
+- implantable-devices
+- neural-interfaces
+- health-technology
+- clinical-research
+- deep-tech
 apis: []
 maintainers:
 - FN: Kin Lane
@@ -19,5 +43,64 @@ maintainers:
 - FN: APIs.json
   email: info@apis.io
 common:
+- type: DomainSecurity
+  url: security/precision-neuroscience-domain-security.yml
 - type: Website
+  url: https://www.precisionneuro.io/
+- type: Technology
+  url: https://www.precisionneuro.io/our-technology
+- type: News
+  url: https://www.precisionneuro.io/articles
+- type: Blog
+  url: https://www.precisionneuro.io/articles/company-news
+- type: Research
+  url: https://www.precisionneuro.io/articles/research
+- type: GitHubOrganization
+  url: https://github.com/precision-neuroscience
+- type: SourceCode
+  url: https://github.com/precision-neuroscience/layer7-nbme2025
+- type: LLMsTxt
+  url: llms/precision-neuroscience-llms.txt
+- type: Conformance
+  url: conformance/precision-neuroscience-conformance.yml
+- type: Careers
+  url: https://www.precisionneuro.io/careers
+- type: Contact
+  url: https://www.precisionneuro.io/contact
+- type: Partners
+  url: https://www.precisionneuro.io/partner-with-us
+- type: TermsOfService
+  url: https://www.precisionneuro.io/terms-and-conditions
+- type: PrivacyPolicy
+  url: https://www.precisionneuro.io/privacy-policy
+- type: SecondaryMarket
   url: https://forgeglobal.com/precision-neuroscience_stock/
+- type: LinkedIn
+  url: https://www.linkedin.com/company/precision-neuroscience-corporation
+x-enrichment:
+  date: '2026-08-05'
+  status: minimal
+  artifacts_added: 4
+  pass: local-v1
+x-coverage:
+  state: none
+  reason: no-developer-program
+  detail: >-
+    Precision Neuroscience ships an FDA-cleared implantable medical device and runs no
+    developer program — every /.well-known/ path, /llms.txt, /openapi.json and /graphql
+    returns a Next.js 404 on www.precisionneuro.io, no api./developer./portal./status.
+    host resolves, the only docs host that does resolve (docs.precisionneuro.io) is a
+    PRIVATE GitHub Pages site that 302s to github.com/pages/auth, and the company's
+    verified GitHub org holds exactly one public repo: an Apache-2.0 research notebook.
+  evidence:
+  - url: https://www.precisionneuro.io/openapi.json
+    status: 404
+  - url: https://www.precisionneuro.io/llms.txt
+    status: 404
+  - url: https://www.precisionneuro.io/.well-known/agent-card.json
+    status: 404
+  - url: https://docs.precisionneuro.io/
+    status: 302
+  - url: https://api.github.com/orgs/precision-neuroscience/repos
+    status: 200
+  checked: '2026-08-05'

@@ -1,0 +1,69 @@
+generated: '2026-08-05'
+method: derived
+source: well-known/precision-neuroscience-well-known.yml, security/precision-neuroscience-domain-security.yml, live probes of precisionneuro.io and github.com/precision-neuroscience on 2026-08-05
+note: >-
+  Derived from what was actually probed on 2026-08-05. Precision Neuroscience publishes no
+  OpenAPI, AsyncAPI, GraphQL SDL, MCP server or compliance program, so most cross-cutting
+  standards are recorded as non-conforming for absence of a surface, not as a failure of
+  implementation. No `Compliance` pointer is emitted — the company publishes no security or
+  compliance certifications on its own domain. Note that Precision is an FDA-regulated
+  medical-device manufacturer (510(k) clearance for the Layer 7 Cortical Interface); device
+  regulatory clearance is not an API/security compliance program and is deliberately not
+  recorded here as one.
+standards:
+- id: openapi
+  conforms: false
+  evidence: >-
+    /openapi.json, /openapi.yaml, /swagger.json, /api-docs, /docs and /redoc all return 404
+    on www.precisionneuro.io; no api. or developer. host resolves.
+- id: asyncapi
+  conforms: false
+  evidence: no event, streaming or webhook surface is documented anywhere on the domain.
+- id: graphql
+  conforms: false
+  evidence: /graphql returns 404 on www.precisionneuro.io.
+- id: mcp
+  conforms: false
+  evidence: no MCP endpoint advertised; mcp.precisionneuro.io does not resolve.
+- id: a2a-agent-card
+  conforms: false
+  evidence: >-
+    /.well-known/agent-card.json and /.well-known/agent.json both return 404 (Next.js
+    error page) on www.precisionneuro.io.
+- id: llms-txt
+  conforms: false
+  evidence: https://www.precisionneuro.io/llms.txt returns 404.
+- id: rfc8615-well-known
+  conforms: false
+  evidence: every /.well-known/* path returns 404.
+- id: rfc9116-security-txt
+  conforms: false
+  evidence: >-
+    /.well-known/security.txt returns 404; probe-security-programs.py found no disclosure
+    page and no bug-bounty program.
+- id: oauth2
+  conforms: false
+  evidence: no oauth-authorization-server metadata; no authenticated public surface exists.
+- id: oidc
+  conforms: false
+  evidence: /.well-known/openid-configuration returns 404.
+- id: rfc9457-problem-details
+  conforms: false
+  evidence: no spec and no error reference published.
+- id: rfc6797-hsts
+  conforms: true
+  evidence: >-
+    www.precisionneuro.io returns Strict-Transport-Security with max-age=63072000
+    (2 years) over TLSv1.3.
+- id: rfc7208-spf
+  conforms: true
+  evidence: precisionneuro.io publishes an SPF record.
+- id: rfc7489-dmarc
+  conforms: true
+  evidence: precisionneuro.io publishes a DMARC record with policy=quarantine.
+- id: dnssec
+  conforms: false
+  evidence: no DNSKEY published for precisionneuro.io.
+- id: rfc8659-caa
+  conforms: false
+  evidence: no CAA record published for precisionneuro.io.

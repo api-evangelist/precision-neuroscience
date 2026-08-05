@@ -1,0 +1,97 @@
+generated: '2026-08-05'
+method: probed
+host: https://www.precisionneuro.io
+note: >-
+  Precision Neuroscience runs a Next.js marketing site (Sanity CMS) on www.precisionneuro.io.
+  Every /.well-known/* path returns a genuine HTTP 404 rendered by the Next.js error page —
+  there is no discovery surface, no security.txt, no OIDC/OAuth metadata, no api-catalog and
+  no A2A agent card. Recorded as an honest zero, not a failure to probe. NO `WellKnown`
+  POINTER IS WIRED INTO apis.yml: nothing was found, so crediting the well-known discovery
+  check would be false credit for an artifact that documents only absences.
+documents:
+- path: /.well-known/security.txt
+  status: 404
+  content_type: text/html; charset=utf-8
+- path: /.well-known/openid-configuration
+  status: 404
+  content_type: text/html; charset=utf-8
+- path: /.well-known/oauth-authorization-server
+  status: 404
+  content_type: text/html; charset=utf-8
+- path: /.well-known/oauth-protected-resource
+  status: 404
+  content_type: text/html; charset=utf-8
+- path: /.well-known/api-catalog
+  status: 404
+  content_type: text/html; charset=utf-8
+- path: /.well-known/ai-plugin.json
+  status: 404
+  content_type: text/html; charset=utf-8
+- path: /.well-known/agent-card.json
+  status: 404
+  content_type: text/html; charset=utf-8
+- path: /.well-known/agent.json
+  status: 404
+  content_type: text/html; charset=utf-8
+- path: /llms.txt
+  status: 404
+  content_type: text/html; charset=utf-8
+- path: /openapi.json
+  status: 404
+  content_type: text/html; charset=utf-8
+- path: /openapi.yaml
+  status: 404
+  content_type: text/html; charset=utf-8
+- path: /swagger.json
+  status: 404
+  content_type: text/html; charset=utf-8
+- path: /api-docs
+  status: 404
+  content_type: text/html; charset=utf-8
+- path: /graphql
+  status: 404
+  content_type: text/html; charset=utf-8
+- path: /api
+  status: 404
+  content_type: text/html; charset=utf-8
+- path: /docs
+  status: 404
+  content_type: text/html; charset=utf-8
+- path: /developers
+  status: 404
+  content_type: text/html; charset=utf-8
+found:
+- path: /robots.txt
+  status: 200
+  content_type: text/plain
+  note: served empty — no rules, no sitemap directive, nothing disallowed
+- path: /sitemap.xml
+  status: 200
+  content_type: application/xml
+  note: 24 URLs, all marketing/editorial pages; no developer, API or docs route
+x-evidence:
+  fetched: '2026-08-05'
+  hosts_probed:
+  - www.precisionneuro.io
+  - precisionneuro.io
+  - docs.precisionneuro.io
+  subdomains_unresolved:
+  - api.precisionneuro.io
+  - developer.precisionneuro.io
+  - developers.precisionneuro.io
+  - app.precisionneuro.io
+  - portal.precisionneuro.io
+  - status.precisionneuro.io
+  - trust.precisionneuro.io
+  - security.precisionneuro.io
+  - mcp.precisionneuro.io
+  gated_hosts:
+  - host: docs.precisionneuro.io
+    resolves_to: precision-neuroscience.github.io
+    status: 302
+    redirect: https://github.com/pages/auth
+    note: >-
+      The only docs host that resolves is a PRIVATE GitHub Pages site. Every path,
+      including /, 302s to GitHub's Pages auth flow and then to github.com/login. Its
+      contents cannot be read anonymously and nothing about it indicates an API
+      reference — it is recorded here as an observed wall, not as evidence of an API.
