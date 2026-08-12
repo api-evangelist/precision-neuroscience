@@ -43,6 +43,9 @@ maintainers:
 - FN: APIs.json
   email: info@apis.io
 common:
+- type: License
+  name: Apache-2.0
+  url: https://github.com/precision-neuroscience/layer7-nbme2025/blob/main/LICENSE
 - type: DomainSecurity
   url: security/precision-neuroscience-domain-security.yml
 - type: Website
