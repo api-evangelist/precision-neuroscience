@@ -16,6 +16,19 @@ description: >-
   specification is published anywhere on its domain. Its only public engineering surface
   is a verified GitHub organization whose single public repository is an Apache-2.0
   research notebook accompanying a 2025 neural-decoding result.
+deliveryModel:
+  model: open-core
+  license: Apache-2.0
+  open_source: true
+  commercial: true
+  callable_host: false
+  label: Open core · an OSS project plus a commercial hosted product
+  confidence: high
+  source:
+  - license
+  - pricing
+  generated: '2026-08-28'
+  method: derived
 image: https://cdn.sanity.io/images/883wn8od/production/27b30ec3135c38d300a7ad288ad4d71b142bdcd1-1200x630.png?fm=webp&w=1200&q=75
 url: https://raw.githubusercontent.com/api-evangelist/precision-neuroscience/refs/heads/main/apis.yml
 x-type: company
@@ -54,6 +67,8 @@ maintainers:
 - FN: APIs.json
   email: info@apis.io
 common:
+- type: IssueTracker
+  url: https://github.com/precision-neuroscience/layer7-nbme2025/issues
 - type: License
   name: Apache-2.0
   url: https://github.com/precision-neuroscience/layer7-nbme2025/blob/main/LICENSE
