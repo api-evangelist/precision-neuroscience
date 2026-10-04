@@ -58,7 +58,7 @@ tags:
 - Neuroscience
 - Implantable Devices
 - neural-interfaces
-- Health Technology
+- Health Tech
 - Clinical Research
 - Deep Tech
 tags_raw:
@@ -72,6 +72,7 @@ tags_raw:
 - health-technology
 - clinical-research
 - deep-tech
+- Health Technology
 apis: []
 maintainers:
 - FN: Kin Lane
